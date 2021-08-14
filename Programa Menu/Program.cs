@@ -35,9 +35,9 @@ namespace semana3_estructuras_de_control
 
             int opcion;
 
-            System.Console.WriteLine("Ejemplos de estructuras de control");
+            System.Console.WriteLine("\nEjemplos de estructuras de control");
             System.Console.WriteLine("1- Mostrar los requisitos para instalar versiones de windows");
-            System.Console.WriteLine("opcion 2");
+            System.Console.WriteLine("2- Mostrar programa de incio de sesion");
             System.Console.WriteLine("opcion 3");
             System.Console.WriteLine("opcion 4");
 
@@ -106,7 +106,42 @@ namespace semana3_estructuras_de_control
 
         static void programa2()
         {
-            System.Console.WriteLine("Programa 2");
+            System.Console.WriteLine("\nPrograma de inicio de sesion");
+            //programa que pide un usuario y contraseña Basicamente un programa de inicio de sesion.
+            
+            string nom, contra;
+            Console.WriteLine("Ingrese su codigo de usuario: ");
+            nom = Console.ReadLine();
+
+
+            while (nom != "SMIS133220")
+            {
+
+                Console.WriteLine("\nUsuario incorrecto");
+                Console.WriteLine("\nIngrese de nuevo el usuario");
+                nom = Console.ReadLine();
+
+            }
+            Console.WriteLine("\nIngrese su contraseña: ");
+            contra = Console.ReadLine();
+
+
+            while (contra != "UsulutanUGB")
+            {
+                Console.WriteLine("\nContraseña incorrecta");
+                Console.WriteLine("\nIngrese de nuevo su contraseña");
+                contra = Console.ReadLine();
+
+
+            }
+
+            Console.WriteLine("\nUsuario y contraseña correctos.");
+
+            if (nom == "SMIS133220" && contra == "UsulutanUGB")
+            {
+                Console.WriteLine("\nBienvenido, usuario " + nom);
+            }
+
 
         }
 
