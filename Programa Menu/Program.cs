@@ -38,8 +38,8 @@ namespace semana3_estructuras_de_control
             System.Console.WriteLine("\nEjemplos de estructuras de control");
             System.Console.WriteLine("1- Mostrar los requisitos para instalar versiones de windows");
             System.Console.WriteLine("2- Mostrar programa de incio de sesion");
-            System.Console.WriteLine("opcion 3");
-            System.Console.WriteLine("opcion 4");
+            System.Console.WriteLine("3- Mostrar programa 3");
+            System.Console.WriteLine("4- Mostrar programa 4");
 
             System.Console.WriteLine("Ingrese la opción: ");
             opcion = Int32.Parse(Console.ReadLine());
@@ -148,12 +148,168 @@ namespace semana3_estructuras_de_control
         static void programa3()
         {
             System.Console.WriteLine("Programa 3");
+            char opcion;
+            string continuar;
+
+            do
+            {
+                Console.WriteLine("|*************************************************|");
+                Console.WriteLine("|*                                               *|");
+                Console.WriteLine("|*       1.-Suma dos numeros (A + B)             *|");
+                Console.WriteLine("|*       2.-reste dos numeros (A - B)            *|");
+                Console.WriteLine("|*       3.-Multiplique dos numeros (A * B)      *|");
+                Console.WriteLine("|*       4.-Divida dos numeros (A / B)           *|");
+                Console.WriteLine("|*       5.-Todas las Operaciones                *|");
+                Console.WriteLine("|*                                               *|");
+                Console.WriteLine("|*       0.-salir                                *|");
+                Console.WriteLine("|*                                               *|");
+                Console.WriteLine("|*                                               *|");
+                Console.Write("\n");
+                Console.Write("Dime una opcion:   ");
+
+                do
+                {
+                    opcion = Console.ReadKey(true).KeyChar;
+                }
+                while (opcion < '0' || opcion > '5');
+                switch(opcion)
+                {
+                    case 'o':
+                        {
+                            Environment.Exit(0);
+                            
+                        }
+                        break;
+                    case'1':
+                        {
+                            Console.Write("{0}\n", opcion);
+                            Console.WriteLine("--------------------");
+
+                            Console.Write("ingrese el numero (A):");
+                            double numeroA = double.Parse(Console.ReadLine());
+
+                            Console.Write("ingrese el numero (B):");
+                            double numeroB = double.Parse(Console.ReadLine());
+
+                            Console.WriteLine("------------------------");
+                            ClassOP op= new ClassOP(numeroA, numeroB);
+                            Console.WriteLine("El resultado de la suma es:" + op.opsuma().ToString());
+
+                        }
+                        break;
+                    case '2':
+                        {
+                            Console.Write("{0}\n", opcion);
+                            Console.WriteLine("--------------------");
+
+                            Console.Write("ingrese el numero (A):");
+                            double numeroA = double.Parse(Console.ReadLine());
+
+                            Console.Write("ingrese el numero (B):");
+                            double numeroB = double.Parse(Console.ReadLine());
+
+                            Console.WriteLine("------------------------");
+                            ClassOP op = new ClassOP(numeroA, numeroB);
+                            Console.WriteLine("El resultado de la resta es:" + op.opresta().ToString());
+
+                        }
+                        break;
+                    case '3':
+
+                        {
+                            Console.Write("{0}\n", opcion);
+                            Console.WriteLine("--------------------");
+
+                            Console.Write("ingrese el numero (A):");
+                            double numeroA = double.Parse(Console.ReadLine());
+
+                            Console.Write("ingrese el numero (B):");
+                            double numeroB = double.Parse(Console.ReadLine());
+
+                            Console.WriteLine("------------------------");
+                            ClassOP op = new ClassOP(numeroA, numeroB);
+                            Console.WriteLine("El resultado de la Multiplicacion es:" + op.opmultiplicar().ToString());
+
+                        }
+
+                        break;
+                    case '4':
+
+                        {
+                            Console.Write("{0}\n", opcion);
+                            Console.WriteLine("--------------------");
+
+                            Console.Write("ingrese el numero (A):");
+                            double numeroA = double.Parse(Console.ReadLine());
+
+                            Console.Write("ingrese el numero (B):");
+                            double numeroB = double.Parse(Console.ReadLine());
+
+                            Console.WriteLine("------------------------");
+                            ClassOP op = new ClassOP(numeroA, numeroB);
+                            Console.WriteLine("El resultado de la division es:" + op.opdividir().ToString());
+
+                        }
+
+                        break;
+
+                    case '5':
+
+                        {
+                            Console.Write("{0}\n", opcion);
+                            Console.WriteLine("--------------------");
+
+                            Console.Write("ingrese el numero (A):");
+                            double numeroA = double.Parse(Console.ReadLine());
+
+                            Console.Write("ingrese el numero (B):");
+                            double numeroB = double.Parse(Console.ReadLine());
+
+                            Console.WriteLine("------------------------");
+                            ClassOP op = new ClassOP(numeroA, numeroB);
+                            Console.WriteLine("El resultado de la suma es           :" + op.opsuma().ToString());
+                            Console.WriteLine("El resultado de la resta es          :" + op.opresta().ToString());
+                            Console.WriteLine("El resultado de la Multiplicacion es :" + op.opmultiplicar().ToString());
+                            Console.WriteLine("El resultado de la division es       :" + op.opdividir().ToString());
+                        }
+                        break;
+                }
+                Console.WriteLine("*********************************");
+                Console.Write("¿deseas continuar? Si/No");
+                continuar = Console.ReadLine();
+                Console.WriteLine("\n");
+                Console.Clear();
+            }
+            while (continuar != "n");
 
         }
 
         static void programa4()
         {
             System.Console.WriteLine("Programa 4");
+            //Programa que calcula el promedio de 3 numeros
+            //Variables
+            double n1 = 0.0;
+            double n2 = 0.0;
+            double n3 = 0.0;
+            double Promedio = 0.0;
+            String dato = "";
+
+            Console.WriteLine("Dame un numero");
+            dato = Console.ReadLine();
+            n1 = Convert.ToDouble(dato);
+
+            Console.WriteLine("Dame el siguiente numero");
+            dato = Console.ReadLine();
+            n2 = Convert.ToDouble(dato);
+
+            Console.WriteLine("otro numero por favor");
+            dato = Console.ReadLine();
+            n3 = Convert.ToDouble(dato);
+
+            Promedio = (n1 + n2 + n3) / 3.0;
+
+            Console.WriteLine("El Promedio es {0}", Promedio);
         }
 
     }
