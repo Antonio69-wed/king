@@ -69,7 +69,7 @@ namespace semana3_estructuras_de_control
 
         static void programa1()
         {
-            System.Console.WriteLine("Versiones de Windows");
+            System.Console.WriteLine("\nVersiones de Windows");
             System.Console.WriteLine("Windows 7");
             System.Console.WriteLine("Procesador de 1 gigahercio ghz " +
                                      "o más rápido de 32 bits x86 o de 64 bits x64" +
@@ -143,7 +143,7 @@ namespace semana3_estructuras_de_control
 
         static void programa3()
         {
-            System.Console.WriteLine("Programa de calculadora");
+            System.Console.WriteLine("\nPrograma de calculadora");
             char opcion;
             string continuar;
             double sumar;
@@ -174,10 +174,9 @@ namespace semana3_estructuras_de_control
                 while (opcion < '0' || opcion > '5');
                 switch (opcion)
                 {
-                    case 'o':
+                    case '0':
                         {
-                            Environment.Exit(0);
-
+                            opciones();
                         }
                         break;
                     case '1':
@@ -292,7 +291,7 @@ namespace semana3_estructuras_de_control
 
         static void programa4()
         {
-            System.Console.WriteLine("Programa de calcular promedio");
+            System.Console.WriteLine("\nPrograma de calcular promedio");
             //Programa que calcula el promedio de 3 numeros
             //Variables
             double n1 = 0.0;
