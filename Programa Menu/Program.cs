@@ -14,7 +14,7 @@ namespace semana3_estructuras_de_control
         static void principal()
         {
             int repetir_menu;
-            System.Console.WriteLine("Estructuras de control en Visual C#");
+            System.Console.WriteLine("\nEstructuras de control en Visual C#");
             System.Console.WriteLine("1. Menú de opciones");
             System.Console.WriteLine("2. Salir");
 
@@ -38,8 +38,8 @@ namespace semana3_estructuras_de_control
             System.Console.WriteLine("\nEjemplos de estructuras de control");
             System.Console.WriteLine("1- Mostrar los requisitos para instalar versiones de windows");
             System.Console.WriteLine("2- Mostrar programa de incio de sesion");
-            System.Console.WriteLine("3- Mostrar programa 3");
-            System.Console.WriteLine("4- Mostrar programa 4");
+            System.Console.WriteLine("3- Mostrar programa de calculadora");
+            System.Console.WriteLine("4- Mostrar programa de calcular promedio");
 
             System.Console.WriteLine("Ingrese la opción: ");
             opcion = Int32.Parse(Console.ReadLine());
@@ -98,10 +98,6 @@ namespace semana3_estructuras_de_control
 
 
 
-
-
-
-
         }
 
         static void programa2()
@@ -147,9 +143,13 @@ namespace semana3_estructuras_de_control
 
         static void programa3()
         {
-            System.Console.WriteLine("Programa 3");
+            System.Console.WriteLine("Programa de calculadora");
             char opcion;
             string continuar;
+            double sumar;
+            double restar;
+            double multiplicar;
+            double dividir;
 
             do
             {
@@ -172,15 +172,15 @@ namespace semana3_estructuras_de_control
                     opcion = Console.ReadKey(true).KeyChar;
                 }
                 while (opcion < '0' || opcion > '5');
-                switch(opcion)
+                switch (opcion)
                 {
                     case 'o':
                         {
                             Environment.Exit(0);
-                            
+
                         }
                         break;
-                    case'1':
+                    case '1':
                         {
                             Console.Write("{0}\n", opcion);
                             Console.WriteLine("--------------------");
@@ -192,9 +192,9 @@ namespace semana3_estructuras_de_control
                             double numeroB = double.Parse(Console.ReadLine());
 
                             Console.WriteLine("------------------------");
-                            ClassOP op= new ClassOP(numeroA, numeroB);
-                            Console.WriteLine("El resultado de la suma es:" + op.opsuma().ToString());
-
+                            sumar = (numeroA + numeroB);
+                            Console.WriteLine("El resultado de la suma es:" + sumar);
+                            
                         }
                         break;
                     case '2':
@@ -209,8 +209,8 @@ namespace semana3_estructuras_de_control
                             double numeroB = double.Parse(Console.ReadLine());
 
                             Console.WriteLine("------------------------");
-                            ClassOP op = new ClassOP(numeroA, numeroB);
-                            Console.WriteLine("El resultado de la resta es:" + op.opresta().ToString());
+                            restar = (numeroA - numeroB);
+                            Console.WriteLine("El resultado de la resta es:" + restar);
 
                         }
                         break;
@@ -227,8 +227,8 @@ namespace semana3_estructuras_de_control
                             double numeroB = double.Parse(Console.ReadLine());
 
                             Console.WriteLine("------------------------");
-                            ClassOP op = new ClassOP(numeroA, numeroB);
-                            Console.WriteLine("El resultado de la Multiplicacion es:" + op.opmultiplicar().ToString());
+                            multiplicar = (numeroA * numeroB);
+                            Console.WriteLine("El resultado de la Multiplicacion es:" + multiplicar);
 
                         }
 
@@ -246,8 +246,8 @@ namespace semana3_estructuras_de_control
                             double numeroB = double.Parse(Console.ReadLine());
 
                             Console.WriteLine("------------------------");
-                            ClassOP op = new ClassOP(numeroA, numeroB);
-                            Console.WriteLine("El resultado de la division es:" + op.opdividir().ToString());
+                            dividir = (numeroA / numeroB);
+                            Console.WriteLine("El resultado de la division es:" + dividir);
 
                         }
 
@@ -256,6 +256,7 @@ namespace semana3_estructuras_de_control
                     case '5':
 
                         {
+
                             Console.Write("{0}\n", opcion);
                             Console.WriteLine("--------------------");
 
@@ -266,11 +267,16 @@ namespace semana3_estructuras_de_control
                             double numeroB = double.Parse(Console.ReadLine());
 
                             Console.WriteLine("------------------------");
-                            ClassOP op = new ClassOP(numeroA, numeroB);
-                            Console.WriteLine("El resultado de la suma es           :" + op.opsuma().ToString());
-                            Console.WriteLine("El resultado de la resta es          :" + op.opresta().ToString());
-                            Console.WriteLine("El resultado de la Multiplicacion es :" + op.opmultiplicar().ToString());
-                            Console.WriteLine("El resultado de la division es       :" + op.opdividir().ToString());
+                            sumar = (numeroA + numeroB);
+                            restar = (numeroA - numeroB);
+                            multiplicar = (numeroA * numeroB);
+                            dividir = (numeroA / numeroB);
+
+                            Console.WriteLine("El resultado de la suma es           :" + sumar);
+                            Console.WriteLine("El resultado de la resta es          :" + restar);
+                            Console.WriteLine("El resultado de la Multiplicacion es :" + multiplicar);
+                            Console.WriteLine("El resultado de la division es       :" + dividir);
+
                         }
                         break;
                 }
@@ -286,7 +292,7 @@ namespace semana3_estructuras_de_control
 
         static void programa4()
         {
-            System.Console.WriteLine("Programa 4");
+            System.Console.WriteLine("Programa de calcular promedio");
             //Programa que calcula el promedio de 3 numeros
             //Variables
             double n1 = 0.0;
@@ -310,6 +316,15 @@ namespace semana3_estructuras_de_control
             Promedio = (n1 + n2 + n3) / 3.0;
 
             Console.WriteLine("El Promedio es {0}", Promedio);
+
+            if (Promedio >= 6)
+            {
+                Console.WriteLine("Has aprobado");
+            }
+            else
+            {
+                Console.WriteLine("Has reprobado");
+            }
         }
 
     }
